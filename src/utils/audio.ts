@@ -2,7 +2,7 @@
 class SoundManager {
   private ctx: AudioContext | null = null;
 
-  private init() {
+  public init() {
     if (!this.ctx && typeof window !== 'undefined') {
       const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       if (AudioCtx) {
@@ -63,3 +63,14 @@ class SoundManager {
 }
 
 export const soundManager = new SoundManager();
+
+// Pre-unlock Web Audio on first user gesture (touch or click) for Android & Samsung Galaxy
+if (typeof window !== 'undefined') {
+  const unlockAudio = () => {
+    soundManager.init();
+    window.removeEventListener('touchstart', unlockAudio);
+    window.removeEventListener('click', unlockAudio);
+  };
+  window.addEventListener('touchstart', unlockAudio, { passive: true });
+  window.addEventListener('click', unlockAudio, { passive: true });
+}

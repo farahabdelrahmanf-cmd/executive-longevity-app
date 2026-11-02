@@ -3,16 +3,30 @@
   "short_name": "Longevity OS",
   "description": "Executive Longevity & Recovery OS tailored for VP Abdelrahman Farah at Saudia Technic, Fitness Time+ Jeddah.",
   "start_url": "/",
+  "id": "/",
   "display": "standalone",
   "background_color": "#050E09",
   "theme_color": "#050E09",
-  "orientation": "portrait-primary",
+  "orientation": "portrait",
+  "categories": ["health", "fitness", "lifestyle"],
   "icons": [
     {
-      "src": "/saudia-technic.svg",
-      "sizes": "192x192 512x512",
-      "type": "image/svg+xml",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/saudia-technic.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Header
 } from "./components/Header";
@@ -55,6 +55,8 @@ import {
   Moon,
   CheckCircle2,
   Dumbbell,
+  X,
+  Download,
 } from "lucide-react";
 
 export function App() {
@@ -115,6 +117,57 @@ export function App() {
     setTimerModal((prev) => ({ ...prev, isOpen: false }));
   };
 
+  // Android & Samsung Galaxy PWA Install Prompt state
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [isInstallBannerVisible, setIsInstallBannerVisible] = useState(true);
+
+  useEffect(() => {
+    const handleBeforeInstall = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener("beforeinstallprompt", handleBeforeInstall);
+    return () => window.removeEventListener("beforeinstallprompt", handleBeforeInstall);
+  }, []);
+
+  const handleInstallApp = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === "accepted") {
+      setDeferredPrompt(null);
+    }
+  };
+
+  // Android hardware back button / swipe-back gesture handling
+  const isAnyModalOpen =
+    timerModal.isOpen ||
+    isBreathingOpen ||
+    isRecoveryOpen ||
+    isInBodyOpen ||
+    isProtocolsOpen ||
+    isSettingsOpen ||
+    isSchedulePlannerOpen;
+
+  useEffect(() => {
+    if (isAnyModalOpen) {
+      window.history.pushState({ modal: true }, "");
+      const handlePop = () => {
+        setTimerModal((prev) => ({ ...prev, isOpen: false }));
+        setIsBreathingOpen(false);
+        setIsRecoveryOpen(false);
+        setIsInBodyOpen(false);
+        setIsProtocolsOpen(false);
+        setIsSettingsOpen(false);
+        setIsSchedulePlannerOpen(false);
+      };
+      window.addEventListener("popstate", handlePop);
+      return () => {
+        window.removeEventListener("popstate", handlePop);
+      };
+    }
+  }, [isAnyModalOpen]);
+
   // Calculate total cardio minutes logged across completed days
   const totalCardio = completedDays.reduce((acc, dayName) => {
     const r = WEEKLY_ROUTINE.find((item) => item.day === dayName);
@@ -124,6 +177,35 @@ export function App() {
   return (
     <div className="min-h-screen bg-[#050E09] text-slate-100 flex flex-col font-sans selection:bg-amber-500/30 selection:text-amber-200">
       
+      {/* Samsung Galaxy & Android 1-Tap Install Notification Bar */}
+      {deferredPrompt && isInstallBannerVisible && (
+        <div className="bg-gradient-to-r from-emerald-950 via-[#006937] to-emerald-950 border-b border-amber-400/30 px-4 py-2.5 text-xs flex items-center justify-between text-white shadow-xl sticky top-0 z-40">
+          <div className="flex items-center gap-2.5">
+            <div className="w-6 h-6 rounded-lg bg-white/10 p-1 flex items-center justify-center shrink-0">
+              <Download className="w-3.5 h-3.5 text-amber-300" />
+            </div>
+            <span className="leading-tight text-slate-100">
+              <strong className="text-amber-300">Samsung Galaxy App:</strong> Install Longevity OS to your home screen for quick gym access.
+            </span>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={handleInstallApp}
+              className="px-3 py-1 rounded-lg bg-amber-400 hover:bg-amber-300 active:scale-95 text-slate-950 font-bold transition text-xs shadow-md"
+            >
+              Install
+            </button>
+            <button
+              onClick={() => setIsInstallBannerVisible(false)}
+              className="p-1 rounded-lg text-emerald-200 hover:text-white transition"
+              aria-label="Dismiss banner"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Sticky Executive Header */}
       <Header
         preferences={preferences}
