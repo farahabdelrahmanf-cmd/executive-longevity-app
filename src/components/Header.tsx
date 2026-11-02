@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Sun, Moon, Wind, Flame, Activity, BookOpen, Settings } from "lucide-react";
+import { Sun, Moon, Wind, Flame, Activity, BookOpen, Settings, Download } from "lucide-react";
 import type { UserPreferences } from "../types";
 import { resolveAsset } from "../utils/assets";
 
@@ -12,6 +12,7 @@ interface HeaderProps {
   onOpenProtocols: () => void;
   onOpenSettings: () => void;
   onOpenSchedulePlanner: () => void;
+  onOpenInstallGuide: () => void;
 }
 
 export const Header = ({
@@ -23,6 +24,7 @@ export const Header = ({
   onOpenProtocols,
   onOpenSettings,
   onOpenSchedulePlanner,
+  onOpenInstallGuide,
 }: HeaderProps) => {
   const [jeddahTime, setJeddahTime] = useState<string>("");
 
@@ -170,6 +172,16 @@ export const Header = ({
               title="Longevity Science"
             >
               <BookOpen className="w-4 h-4 text-[#00A859]" />
+            </button>
+
+            {/* Install App Button */}
+            <button
+              onClick={onOpenInstallGuide}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-500/20 hover:bg-emerald-500/35 text-emerald-300 border border-emerald-500/40 transition active:scale-95 shadow-sm"
+              title="Install App on Phone"
+            >
+              <Download className="w-3.5 h-3.5 text-amber-400" />
+              <span className="hidden sm:inline">Install App</span>
             </button>
 
             {/* Settings */}

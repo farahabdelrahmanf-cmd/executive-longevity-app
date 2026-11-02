@@ -41,6 +41,9 @@ import {
 import {
   WarmUpCard
 } from "./components/WarmUpCard";
+import {
+  InstallGuideModal
+} from "./components/InstallGuideModal";
 
 import { WEEKLY_ROUTINE } from "./data/workoutPlan";
 import type { DayOfWeek, DayRoutine, UserPreferences, InBodyRecord, ScheduleConfig } from "./types";
@@ -97,6 +100,7 @@ export function App() {
   const [isProtocolsOpen, setIsProtocolsOpen] = useState<boolean>(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
   const [isSchedulePlannerOpen, setIsSchedulePlannerOpen] = useState<boolean>(false);
+  const [isInstallGuideOpen, setIsInstallGuideOpen] = useState<boolean>(false);
 
   const currentRoutine: DayRoutine =
     WEEKLY_ROUTINE.find((r) => r.day === activeDay) || WEEKLY_ROUTINE[0];
@@ -150,7 +154,8 @@ export function App() {
     isInBodyOpen ||
     isProtocolsOpen ||
     isSettingsOpen ||
-    isSchedulePlannerOpen;
+    isSchedulePlannerOpen ||
+    isInstallGuideOpen;
 
   useEffect(() => {
     if (isAnyModalOpen) {
@@ -163,6 +168,7 @@ export function App() {
         setIsProtocolsOpen(false);
         setIsSettingsOpen(false);
         setIsSchedulePlannerOpen(false);
+        setIsInstallGuideOpen(false);
       };
       window.addEventListener("popstate", handlePop);
       return () => {
@@ -223,6 +229,7 @@ export function App() {
         onOpenProtocols={() => setIsProtocolsOpen(true)}
         onOpenSettings={() => setIsSettingsOpen(true)}
         onOpenSchedulePlanner={() => setIsSchedulePlannerOpen(true)}
+        onOpenInstallGuide={() => setIsInstallGuideOpen(true)}
       />
 
       {/* Main App Container */}
@@ -471,6 +478,14 @@ export function App() {
         onClose={() => setIsSettingsOpen(false)}
         preferences={preferences}
         onSavePreferences={(prefs: UserPreferences) => setPreferences(prefs)}
+      />
+
+      {/* Phone App Installation Guide Modal (Apple & Samsung Galaxy) */}
+      <InstallGuideModal
+        isOpen={isInstallGuideOpen}
+        onClose={() => setIsInstallGuideOpen(false)}
+        deferredPrompt={deferredPrompt}
+        onTriggerInstall={handleInstallApp}
       />
 
     </div>
