@@ -24,6 +24,39 @@ export const WEEKLY_ROUTINE: DayRoutine[] = [
       ],
       scienceBenefit: "Triggers heat shock proteins that protect heart arteries and naturally switches your body from work stress into deep evening relaxation."
     },
+    warmup: {
+      title: "Rotator Cuff & Posture Joint Lubrication Sequence",
+      durationMinutes: 6,
+      executiveRationale: "Sitting in meetings rounds shoulders forward and stiffens the thoracic spine. Moving joints without load activates synovial fluid and pre-warms the rotator cuff to protect shoulders from impingement during presses and pulldowns.",
+      steps: [
+        {
+          name: "Systemic Core Temperature Elevation",
+          durationOrReps: "3 Minutes",
+          instructions: "Pedal easily on the Technogym Recline Bike at Level 3 (60-70 RPM). Brings blood flow to working muscles and raises core temperature by 1°C.",
+          equipment: "Technogym Recline Bike (Cardio Area)",
+          jointFocus: "Cardiovascular & Systemic"
+        },
+        {
+          name: "Standing Arm Circles & Wall Slides",
+          durationOrReps: "15 Reps each direction",
+          instructions: "Stand tall. Make 15 small circles forward, then 15 large. Next, slide your forearms up against a wall or post to activate upper back stabilizers.",
+          jointFocus: "Shoulders & Rotator Cuff"
+        },
+        {
+          name: "Thoracic Spine & Chest Openers",
+          durationOrReps: "10 Slow Rotations",
+          instructions: "Place hands on hips. Gently rotate shoulders and ribcage left to right. Interlace fingers behind lower back and gently pull down to open the chest.",
+          jointFocus: "Thoracic Spine & Pectorals"
+        },
+        {
+          name: "Chest Press Acclimatization Feeler Set",
+          durationOrReps: "1 Set of 12 Light Reps",
+          instructions: "Sit at Chest Press with seat adjusted to mid-chest. Select the lowest peg (20-30% working weight). Perform 12 slow reps to test shoulder path with zero strain.",
+          equipment: "Technogym Chest Press",
+          jointFocus: "Neuromuscular Calibration"
+        }
+      ]
+    },
     exercises: [
       {
         id: "sun-1",
@@ -221,6 +254,40 @@ export const WEEKLY_ROUTINE: DayRoutine[] = [
       ],
       scienceBenefit: "Relieves lumbar spine compression and releases tight hip flexors from long office sitting."
     },
+    warmup: {
+      title: "Knee Cartilage Lubrication & Hip Mobility Protocol",
+      durationMinutes: 6,
+      executiveRationale: "CRITICAL AT AGE 60 & 110KG: Knee cartilage has no direct blood supply—it lubricates solely through gentle non-impact motion. Never sit at the Leg Press cold. Cycling for 4 minutes distributes protective synovial fluid across knee cartilage before supporting heavy weight.",
+      steps: [
+        {
+          name: "Non-Impact Knee Synovial Flush",
+          durationOrReps: "4 Minutes",
+          instructions: "Pedal smoothly on the Technogym Recline Bike at Level 3 (65-75 RPM). The back-supported seat takes all 110kg off your spine while circular pedaling bathes knee cartilage in joint fluid.",
+          equipment: "Technogym Recline Bike",
+          jointFocus: "Knees & Patellofemoral Cartilage"
+        },
+        {
+          name: "Standing Hip Swings & Ankle Mobilization",
+          durationOrReps: "10 Swings per leg",
+          instructions: "Hold a gym pillar or machine frame for balance. Swing your leg gently forward and back 10 times, then side-to-side 10 times. Rotate each ankle 10 circles.",
+          jointFocus: "Hips & Ankle Dorsiflexion"
+        },
+        {
+          name: "Bench Sit-to-Stand (Bodyweight Warm-up)",
+          durationOrReps: "8 Slow Reps",
+          instructions: "Sit down on a gym bench with feet flat, stand up smoothly driving through your heels, and sit down slowly over 3 seconds. Pre-activates glutes without external load.",
+          equipment: "Gym Bench",
+          jointFocus: "Glutes & Knee Tracking"
+        },
+        {
+          name: "Leg Press Calibration Feeler Set",
+          durationOrReps: "1 Set of 12 Empty / Light Reps",
+          instructions: "Lie back on the 45° Leg Press with ZERO extra plates (or lowest machine pin). Place feet shoulder-width, toes turned 15° out. Do 12 slow reps checking that knees track over mid-toes without pinching.",
+          equipment: "Technogym Leg Press",
+          jointFocus: "Knee Alignment & Range Check"
+        }
+      ]
+    },
     exercises: [
       {
         id: "mon-1",
@@ -391,6 +458,32 @@ export const WEEKLY_ROUTINE: DayRoutine[] = [
       ],
       scienceBenefit: "Hydrates your respiratory system after air-conditioned offices and triggers deep nighttime sleep."
     },
+    warmup: {
+      title: "Spinal Decompression & Aerobic Ramp Protocol",
+      durationMinutes: 5,
+      executiveRationale: "Prepares your vascular system and lumbar spine for 30 minutes of steady-state aerobic conditioning without sudden spikes in blood pressure.",
+      steps: [
+        {
+          name: "Treadmill Low-Speed Acclimatization Walk",
+          durationOrReps: "3 Minutes",
+          instructions: "Walk at a comfortable 2.8 - 3.2 km/h on a 0% incline. Let arms swing naturally and breathe rhythmically through your nose.",
+          equipment: "Technogym Treadmill",
+          jointFocus: "Cardiovascular & Ankle Flexibility"
+        },
+        {
+          name: "Standing Pelvic Tilts & Cat-Cow Stretch",
+          durationOrReps: "10 Slow Breaths",
+          instructions: "Rest hands on knees. Arch back slightly while inhaling, then round back gently while exhaling. Decompresses lumbar vertebrae.",
+          jointFocus: "Lumbar Spine & Core"
+        },
+        {
+          name: "Deep Nasal Breathing Calibration",
+          durationOrReps: "1 Minute",
+          instructions: "Take 4 slow breaths in through the nose (4 seconds) and out through the mouth (6 seconds) to establish heart rate control before Zone 2.",
+          jointFocus: "Autonomic Nervous System"
+        }
+      ]
+    },
     exercises: [
       {
         id: "tue-1",
@@ -470,6 +563,33 @@ export const WEEKLY_ROUTINE: DayRoutine[] = [
         "Drink 500ml of cold water with electrolytes."
       ],
       scienceBenefit: "Accelerates muscle recovery, lowers arterial blood pressure, and releases growth factors."
+    },
+    warmup: {
+      title: "Posterior Chain, Hamstring & Knee Prep Protocol",
+      durationMinutes: 6,
+      executiveRationale: "At age 60, hamstrings and glutes stiffen from sitting. Warming them up prevents strain on the lower back and ensures the knee joint stays stable during leg curls and leg presses.",
+      steps: [
+        {
+          name: "Knee & Quad Synovial Warm-Up",
+          durationOrReps: "4 Minutes",
+          instructions: "Easy pedaling on the Technogym Upright or Recline Bike (Level 3-4, 70 RPM). Warms up quadriceps tendons and the patellar ligament.",
+          equipment: "Technogym Bike",
+          jointFocus: "Knees & Patellar Tendon"
+        },
+        {
+          name: "Standing Hip Hinges (Good Mornings with Hands on Hips)",
+          durationOrReps: "10 Slow Reps",
+          instructions: "Stand tall with hands on hips, soft bend in knees. Push hips back until feeling a gentle stretch in hamstrings, then stand upright by squeezing glutes.",
+          jointFocus: "Hamstrings & Lower Back"
+        },
+        {
+          name: "Seated Leg Curl Calibration Feeler Set",
+          durationOrReps: "1 Set of 12 Light Reps",
+          instructions: "Sit on Leg Curl machine. Adjust pad so it rests on lower calves. Use lightest weight pin and perform 12 smooth reps to warm the knee flexors.",
+          equipment: "Technogym Seated Leg Curl",
+          jointFocus: "Hamstrings & Knee Flexion"
+        }
+      ]
     },
     exercises: [
       {
@@ -583,6 +703,39 @@ export const WEEKLY_ROUTINE: DayRoutine[] = [
       ],
       scienceBenefit: "Lowers cortisol and adrenaline to guarantee a deep, restorative night of sleep heading into Friday."
     },
+    warmup: {
+      title: "Upper Back, Scapular & Lat Warm-Up Sequence",
+      durationMinutes: 5,
+      executiveRationale: "Prepares your middle back and grip tendons before heavy pulling. Prevents straining the upper trapezius or pinching the biceps tendon during rows and pulldowns.",
+      steps: [
+        {
+          name: "Upper Body Cardio Elevation",
+          durationOrReps: "3 Minutes",
+          instructions: "Gentle brisk walk on 3% incline (3.0 km/h) or light rowing machine strokes (Level 2). Brings blood to your latissimus dorsi and rhomboids.",
+          equipment: "Technogym Treadmill or Rower",
+          jointFocus: "Cardio & Whole Body Warmth"
+        },
+        {
+          name: "Scapular Squeeze & Shoulder Blade Retractions",
+          durationOrReps: "12 Reps",
+          instructions: "Hold arms out in front, squeeze shoulder blades back together for 2 seconds, then relax. Wakes up the postural muscles that keep shoulders back.",
+          jointFocus: "Scapular Stabilizers & Rhomboids"
+        },
+        {
+          name: "Pillar Lat Stretch",
+          durationOrReps: "20 Seconds per side",
+          instructions: "Hold onto a gym pole or machine upright. Lean back and let your arm gently elongate to stretch the side of your back.",
+          jointFocus: "Latissimus Dorsi & Shoulder"
+        },
+        {
+          name: "Cable Seated Row Feeler Set",
+          durationOrReps: "1 Set of 12 Light Reps",
+          instructions: "Set the weight to just 15-20kg. Focus on pulling handles to your belly button while sitting tall with chest out.",
+          equipment: "Technogym Seated Cable Row",
+          jointFocus: "Row Mechanics Calibration"
+        }
+      ]
+    },
     exercises: [
       {
         id: "thu-1",
@@ -665,6 +818,31 @@ export const WEEKLY_ROUTINE: DayRoutine[] = [
       ],
       scienceBenefit: "Dr. Andrew Huberman's gold standard protocol: massive boost in endorphins, reduction in joint inflammation, and deep systemic recovery."
     },
+    warmup: {
+      title: "Gentle Ankle, Knee & Hip Opening Sequence",
+      durationMinutes: 4,
+      executiveRationale: "Prepares ankles, hips, and calves for an easy 30-minute recovery walk around Jeddah Corniche or neighborhood gardens.",
+      steps: [
+        {
+          name: "Ankle Rotations & Calf Pumps",
+          durationOrReps: "10 Circles & 10 Pumps each side",
+          instructions: "Rotate each foot in circles to loosen ankles, then do 10 gentle standing calf raises holding onto a wall.",
+          jointFocus: "Ankles & Achilles Tendon"
+        },
+        {
+          name: "Standing Quad & Hip Flexor Stretch",
+          durationOrReps: "20 Seconds each side",
+          instructions: "Hold a wall or chair for balance. Gently lift heel toward glute or step one foot back into a gentle lunge stretch.",
+          jointFocus: "Hip Flexors & Quads"
+        },
+        {
+          name: "Pre-Walk Hydration Check",
+          durationOrReps: "1 Glass of Water",
+          instructions: "Drink 300ml of room-temperature water before heading out into Jeddah afternoon sunshine.",
+          jointFocus: "Cellular Hydration"
+        }
+      ]
+    },
     exercises: [
       {
         id: "fri-1",
@@ -742,6 +920,31 @@ export const WEEKLY_ROUTINE: DayRoutine[] = [
         "Take a warm evening shower 90 minutes before bed to guarantee deep sleep for Sunday kickoff."
       ],
       scienceBenefit: "Sets your internal biological clock so you wake up on Sunday with natural energy and focus for the workweek."
+    },
+    warmup: {
+      title: "Spinal Decompression & Thermal Pre-Activation",
+      durationMinutes: 4,
+      executiveRationale: "Relaxes the central nervous system and primes cardiovascular dilation before entering the hot sauna and cold plunge circuit at Fitness Time+.",
+      steps: [
+        {
+          name: "Gentle Mat Cat-Cow & Child's Pose",
+          durationOrReps: "2 Minutes",
+          instructions: "On an exercise mat, move gently between arching and rounding spine. Shift hips back toward heels into Child's Pose to gently lengthen the lower back.",
+          jointFocus: "Spine & Sacroiliac Joint"
+        },
+        {
+          name: "Shoulder & Chest Sweep",
+          durationOrReps: "1 Minute",
+          instructions: "Gentle standing arm swings across the chest to open blood vessels in the upper body.",
+          jointFocus: "Pectorals & Rotator Cuff"
+        },
+        {
+          name: "Electrolyte Pre-Load",
+          durationOrReps: "500ml Water + Electrolytes",
+          instructions: "Hydrate well before the thermal circuit to maintain blood volume and prevent lightheadedness in the sauna.",
+          jointFocus: "Circulatory & Blood Volume"
+        }
+      ]
     },
     exercises: [
       {

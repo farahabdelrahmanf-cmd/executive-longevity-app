@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Sun, Moon, Wind, Flame, Activity, BookOpen, Settings } from "lucide-react";
 import type { UserPreferences } from "../types";
+import { resolveAsset } from "../utils/assets";
 
 interface HeaderProps {
   preferences: UserPreferences;
@@ -66,8 +67,8 @@ export const Header = ({
             {/* Official Saudia Technic Emblem Logo */}
             <div className="w-12 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-lg shadow-emerald-950/40 border border-[#006937]/40 shrink-0">
               <img
-                src="/saudia-technic.svg"
-                alt="Saudi Technic Logo"
+                src={resolveAsset("/saudia-technic.svg")}
+                alt="Saudia Technic Logo"
                 className="w-full h-full object-contain"
               />
             </div>

@@ -36,6 +36,21 @@ export interface RecoveryProtocol {
   scienceBenefit: string;
 }
 
+export interface WarmUpStep {
+  name: string;
+  durationOrReps: string;
+  instructions: string;
+  equipment?: string;
+  jointFocus: string;
+}
+
+export interface WarmUpProtocol {
+  title: string;
+  durationMinutes: number;
+  executiveRationale: string;
+  steps: WarmUpStep[];
+}
+
 export interface DayRoutine {
   day: DayOfWeek;
   shortDay: string;
@@ -46,6 +61,7 @@ export interface DayRoutine {
   focus: string;
   intensity: 'Low' | 'Moderate' | 'Recovery';
   cardioMinutes: number;
+  warmup?: WarmUpProtocol;
   exercises: Exercise[];
   recovery: RecoveryProtocol;
 }

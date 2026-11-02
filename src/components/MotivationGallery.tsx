@@ -12,6 +12,7 @@ import {
   Image as ImageIcon
 } from "lucide-react";
 import { INITIAL_MOTIVATION_PHOTOS, type MotivationPhoto } from "../data/motivationPhotos";
+import { resolveAsset } from "../utils/assets";
 
 const STORAGE_CUSTOM_PHOTOS_KEY = "apex_custom_motivation_photos";
 
@@ -231,7 +232,7 @@ export function MotivationGallery() {
               {/* Photo Container */}
               <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden bg-black/60">
                 <img
-                  src={photo.url}
+                  src={resolveAsset(photo.url)}
                   alt={photo.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
@@ -340,7 +341,7 @@ export function MotivationGallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={photos[lightboxIndex].url}
+              src={resolveAsset(photos[lightboxIndex].url)}
               alt={photos[lightboxIndex].title}
               className="max-h-[72vh] max-w-full object-contain rounded-2xl shadow-2xl border border-emerald-500/30"
             />

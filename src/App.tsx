@@ -38,6 +38,9 @@ import {
 import {
   MotivationGallery
 } from "./components/MotivationGallery";
+import {
+  WarmUpCard
+} from "./components/WarmUpCard";
 
 import { WEEKLY_ROUTINE } from "./data/workoutPlan";
 import type { DayOfWeek, DayRoutine, UserPreferences, InBodyRecord, ScheduleConfig } from "./types";
@@ -304,6 +307,14 @@ export function App() {
             </>
           )}
         </div>
+
+        {/* Pre-Workout Joint Lubrication & Warm-Up (Crucial for Age 60 & 110kg) */}
+        {currentRoutine.warmup && (
+          <WarmUpCard
+            warmup={currentRoutine.warmup}
+            onOpenTimer={handleOpenTimer}
+          />
+        )}
 
         {/* Exercises Section */}
         <div className="space-y-4">
