@@ -177,11 +177,11 @@ export const Header = ({
             {/* Install App Button */}
             <button
               onClick={onOpenInstallGuide}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-500/20 hover:bg-emerald-500/35 text-emerald-300 border border-emerald-500/40 transition active:scale-95 shadow-sm"
-              title="Install App on Phone"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold bg-amber-400/20 hover:bg-amber-400/35 text-amber-300 border border-amber-400/40 transition active:scale-95 shadow-sm"
+              title="Install App on Samsung Phone"
             >
               <Download className="w-3.5 h-3.5 text-amber-400" />
-              <span className="hidden sm:inline">Install App</span>
+              <span className="inline text-[11px] sm:text-xs">Install App</span>
             </button>
 
             {/* Settings */}
